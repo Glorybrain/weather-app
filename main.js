@@ -21,7 +21,7 @@ async function checkWeather(city) {
 
     locationInvalid.style.display = "none"
     weatherContainer.style.display = "flex"
-    
+
     temperature.innerHTML = `${Math.round(weatherData.main.temp - 273.15)}°C`
     description.innerHTML = `${weatherData.weather[0].description}`
     humidity.innerHTML = `${weatherData.main.humidity}%`
@@ -39,6 +39,8 @@ async function checkWeather(city) {
         case "Clear": weatherImg.src = "images/clear.png"
         break;
     }
+
+    console.log(weatherData)
 }
 
 searchBtn.addEventListener("click", function() {
